@@ -1,57 +1,58 @@
-# PROJETO CALCULADORA - FASE 1 - B
-### Recomenda-se utilizar o Microchip Studio para carregar o programa com os arquivos 'pausas.inc' e 'Calculadora.asm' no Arduino Mega, após executar o programa em python
+# CALCULATOR PROJECT - PHASE 1 - B
 
-  Além de gerar os arquivos 'pausas.inc' e 'Calculadora.asm'. O arquivo .asm apresenta o código assembly para realização das operações no Arduino Mega, o qual utiliza o arquivo .inc com as funcionalidades para realizar um delay entre as operações. 
+### It is recommended to use Microchip Studio to load the program with the 'pausas.inc' and 'Calculadora.asm' files onto the Arduino Mega, after running the Python program.
 
-  Este é um programa desenvolvido em Python para solucionar expressões aritméticas em notação RPN. O programa realia a leitura das expressões em um arquivo txt e realiza o calculo das expressões. As expressões realiza adição, subtração, mutiplicação, divisão real, divisão de inteiros, resto da divisão de inteiros, potenciação e três comandos especiais sendo eles: (N RES), (V MEM) e (MEM). O seu programa executa cada uma das expressões indicadas no ambiente online (python) e gera um arquivo Calculadora.asm, o qual é utilizado para gravar no Arduino Mega para o mesmo apresentar o resultado das operações contidas em todas as linhas do arquivo de entrada.
+Additionally, it generates the 'pausas.inc' and 'Calculadora.asm' files. The .asm file contains the assembly code for performing operations on the Arduino Mega, which uses the .inc file with functionalities to introduce a delay between operations.
 
-## Operações em notação RPN
-  ->  A e B representam números reais
+This is a Python program developed to solve arithmetic expressions in Reverse Polish Notation (RPN). The program reads expressions from a text file and computes the results. The expressions involve addition, subtraction, multiplication, real division, integer division, integer division remainder, exponentiation, and three special commands: (N RES), (V MEM), and (MEM). The program executes each expression in an online Python environment and generates a 'Calculadora.asm' file, which is used to upload to the Arduino Mega to display the results of the operations in all lines of the input file.
 
-  a) Adição:+, no formato (A B +);  <br />
-  b) Subtração: - no formato (A B -) ;  <br />
-  c) Multiplicação: * no formato (A B *);  <br />
-  d) Divisão Real: | no formato (A B |);  <br />
-  e) Divisão de inteiros: / no formato (A B /);  <br />
-  f) Resto da Divisão de Inteiros: % no formato (A B %);  <br />
-  g) Potenciação: ^ no formato (A B ^); <br />
+## Operations in RPN Notation
+  -> A and B represent real numbers.
 
-### Comandos Especiais
-  a) (N RES): devolve o resultado da expressão que está N linhas antes, onde N é um número inteiro não negativo;  <br />
-  b) (V MEM): armazena um valor, V, em um espaço de memória chamado de MEM, capaz de armazenar um valor real;  <br />
-  c) (MEM): devolve o valor armazenado na memória. Se a memória não tiver sido usada anteriormente devolve o número real zero. Cada arquivo de textos é um escopo de aplicação. <br />
+  a) Addition: +, in the format (A B +);  <br />
+  b) Subtraction: -, in the format (A B -);  <br />
+  c) Multiplication: *, in the format (A B *);  <br />
+  d) Real Division: |, in the format (A B |);  <br />
+  e) Integer Division: /, in the format (A B /);  <br />
+  f) Integer Division Remainder: %, in the format (A B %);  <br />
+  g) Exponentiation: ^, in the format (A B ^); <br />
 
-### Observações adicionais de requisitos
-  Use o ponto para indicar a vírgula decimal. <br />
-  O expoente da operação de potenciação será sempre um inteiro positivo. <br />
-  As expressões indicadas podem ser aninhadas para a criação de expressões compostas. <br />
-  O programa deverá ser executado recebendo como argumento, na linha de comando, o nome do arquivo de teste. <br />
-  Todas as operações serão executadas sobre números reais de meia precisão (16 bits/ IEEE754) <br />
+### Special Commands
+  a) (N RES): Returns the result of the expression that is N lines before, where N is a non-negative integer;  <br />
+  b) (V MEM): Stores a value, V, in a memory space called MEM, which can store a real value;  <br />
+  c) (MEM): Returns the value stored in memory. If memory has not been used previously, it returns the real number zero. Each text file is a scope of application. <br />
 
-## Executando o Programa
-  A execução do programa pode ser feita da seguinte forma:
+### Additional Requirement Notes
+  Use the period to indicate the decimal point. <br />
+  The exponent in the exponentiation operation will always be a positive integer. <br />
+  The indicated expressions can be nested to create composite expressions. <br />
+  The program should be executed by providing the name of the test file as an argument in the command line. <br />
+  All operations will be executed on real half-precision numbers (16 bits/IEEE754) <br />
+
+## Running the Program
+  To run the program, execute the following:
 
   --- Replit Shell <br />
-    python main.py nomeArquivoTeste <br />
+    python main.py testFileName <br />
 
-  É necessário substituir 'nomeArquivoTeste' pelo nome do arquivo que deseja solucionar.
+  Replace 'testFileName' with the name of the file you wish to solve.
 
-## Exemplo de execução
-### Arquivo txt
-  Nome arquivo txt: 'calculos' <br />
-  Conteúdo do arquivo txt:  <br />
+## Example of Execution
+### Text File
+  File name: 'calculos' <br />
+  Content of the text file:  <br />
   (2 2 +) <br />
   3 (1 2 *) *) <br />
   (16 (2 2 ^) /) <br />
   ((9 5 *) 10 +) <br />
   ((3 2 ^) (2 2 ^) *) <br />
   
-### Execução do programa
+### Program Execution
   --- Replit Shell <br />
   python main.py 'calculos'
 
-### Resultado da execução do programa
-  Os resultados das expressões contidas no arquivo 'calculos.txt' serão apresentadas no ambinte online no formato '-> expressão = X', onde 'expressão' é o cálculo realizado e 'X' o resultado do cálculo.
+### Execution Result
+  The results of the expressions contained in the 'calculos.txt' file will be displayed in the online environment in the format '-> expression = X', where 'expression' is the calculation performed and 'X' is the result of the calculation.
 
   --- Replit <br />
   -> (2 2 +) = 4.0 <br />
