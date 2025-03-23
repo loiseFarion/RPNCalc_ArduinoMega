@@ -49,7 +49,7 @@ This is a Python program developed to solve arithmetic expressions in Reverse Po
   
 ### Program Execution
   --- Replit Shell <br />
-  python main.py 'calculos'
+  python partB.py 'calculos'
 
 ### Execution Result
   The results of the expressions contained in the 'calculos.txt' file will be displayed in the online environment in the format '-> expression = X', where 'expression' is the calculation performed and 'X' is the result of the calculation.
